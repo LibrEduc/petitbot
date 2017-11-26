@@ -2,11 +2,6 @@ difference(){
 
 union(){
  translate([-0.5,8.5,2]) flexbatterAA(n=4);
-
- linear_extrude(height = 4, center = false, convexity = 10)
-   import (file = "chassis_servo_9g.dxf",layer="0");
-   translate([0,0,0])linear_extrude(height = 25, center = false, convexity = 10)
-   import (file = "chassis_servo_9g.dxf",layer="porte_crayon");
 }
 
 translate ([30,2,0])cube([2,4,30]);
