@@ -13,12 +13,6 @@
 
 #include <Ticker.h>
 
-//portail captif
-#include <DNSServer.h>
-const byte DNS_PORT = 53;
-IPAddress apIP(192, 168, 4, 1);
-DNSServer dnsServer;
-
 Ticker stopper;
 
 // SKETCH BEGIN
@@ -76,28 +70,7 @@ void setup() {
   servo1.attach(pin_servo1);
   servo2.attach(pin_servo2);
   servo3.attach(pin_servo3);
-  
-  /////redirection portail captif
- server.on("/", HTTP_GET, [](AsyncWebServerRequest * request) {
-    request->redirect("/index.html");
-    delay(100);
-  });
 
-  server.on("/generate_204", HTTP_GET, [](AsyncWebServerRequest * request) {
-    request->redirect("/index.html");
-    delay(100);
-  });
-
-  server.on("/fwlink", HTTP_GET, [](AsyncWebServerRequest * request) {
-    request->redirect("/index.html");
-    delay(100);
-  });
-
-  server.onNotFound([](AsyncWebServerRequest * request) {
-    request->redirect("/index.html");
-    delay(100);
-  });
-  ////////////////
 
 
 
@@ -537,7 +510,6 @@ WiFi.hostname(name.c_str());
   ArduinoOTA.begin();
   MDNS.addService("http", "tcp", 80);
   MDNS.begin(name.c_str());
-  dnsServer.start(DNS_PORT, "*", apIP);
 
 
 
@@ -548,7 +520,7 @@ WiFi.hostname(name.c_str());
 
 }
 void loop() {
-  dnsServer.processNextRequest(); //demarrage ecoute  du portail captif
+
   ArduinoOTA.handle();
   if (restartNow) {
     Serial.println("Restart");
