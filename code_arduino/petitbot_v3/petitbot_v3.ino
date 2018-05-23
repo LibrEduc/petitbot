@@ -1,8 +1,6 @@
 #include <ArduinoJson.h>
-
 #include <ESP8266WiFi.h>
 #include <WiFiClient.h>
-
 #include <ESP8266mDNS.h>
 #include <ArduinoOTA.h>
 #include <FS.h>
@@ -10,7 +8,6 @@
 #include <ESPAsyncTCP.h>
 #include <ESPAsyncWebServer.h>
 #include <SPIFFSEditor.h>
-
 #include <Ticker.h>
 
 Ticker stopper;
@@ -70,9 +67,6 @@ void setup() {
   servo1.attach(pin_servo1);
   servo2.attach(pin_servo2);
   servo3.attach(pin_servo3);
-
-
-
 
   server.on("/heap", HTTP_GET, [](AsyncWebServerRequest * request) {
     request->send(200, "text/plain", String(ESP.getFreeHeap()));
@@ -162,7 +156,6 @@ void setup() {
     }
   });
 
-
   server.on("/avance", HTTP_GET, [](AsyncWebServerRequest * request) {
     servoG.attach(pin_servoG);
     servoD.attach(pin_servoD);
@@ -182,29 +175,25 @@ void setup() {
       request->send(200, "text/json", "Avance");
     }
   });
+  
   server.on("/step_avance", HTTP_GET, [](AsyncWebServerRequest * request) {
     servoG.attach(pin_servoG);
     servoD.attach(pin_servoD);
-
     servoG.write(180);
     servoD.write(0);
     stopper.attach(0.4, arret);
-
     request->send(200, "text/json", "step avance");
-
   });
 
   server.on("/step_recule", HTTP_GET, [](AsyncWebServerRequest * request) {
     servoG.attach(pin_servoG);
     servoD.attach(pin_servoD);
-
     servoG.write(0);
     servoD.write(180);
     stopper.attach(0.4, arret);
-
     request->send(200, "text/json", "step recule");
-
   });
+  
   server.on("/recule", HTTP_GET, [](AsyncWebServerRequest * request) {
     servoG.attach(pin_servoG);
     servoD.attach(pin_servoD);
@@ -248,25 +237,19 @@ void setup() {
   server.on("/step_gauche", HTTP_GET, [](AsyncWebServerRequest * request) {
     servoG.attach(pin_servoG);
     servoD.attach(pin_servoD);
-
     servoD.write(180);
     servoG.write(180);
     stopper.attach(0.2, arret);
     request->send(200, "text/json", "Gauche");
-
   });
-
 
   server.on("/step_droite", HTTP_GET, [](AsyncWebServerRequest * request) {
     servoG.attach(pin_servoG);
     servoD.attach(pin_servoD);
-
     servoD.write(0);
     servoG.write(0);
-
     stopper.attach(0.2, arret);
     request->send(200, "text/json", "Droite");
-
   });
 
   server.on("/droite", HTTP_GET, [](AsyncWebServerRequest * request) {
@@ -316,7 +299,6 @@ void setup() {
     }
   });
 
-
   server.on("/stop", HTTP_GET, [](AsyncWebServerRequest * request) {
     servoG.attach(pin_servoG);
     servoD.attach(pin_servoD);
@@ -336,18 +318,14 @@ void setup() {
     request->send(200, "text/json", "PetitBot : " + String(version));
   });
 
-
-
   server.on("/distance", HTTP_GET, [](AsyncWebServerRequest * request) {
     int distance = Ultrasonic1.distanceRead();
     request->send(200, "text/json", String(distance));
   });
 
-
   server.on("/update", HTTP_POST, [](AsyncWebServerRequest * request) {
     request->send(200);
   }, handle_update_progress_cb);
-
 
   server.on("/scan", HTTP_GET, [](AsyncWebServerRequest * request) {
     String json = "[";
@@ -385,9 +363,7 @@ void setup() {
     pin_servoG = D2; // pin servo gauche
     pin_servoD = D1; // pin servo droit
   }
-
 }
-
 
 void arret() {
   servoG.attach(pin_servoG);
@@ -425,8 +401,8 @@ void read_config() {
   mdp = String(mdp_char);
   canal = String(canal_char);
   invert_motors = String(invert_motors_char);
-
 }
+
 static void handle_update_progress_cb(AsyncWebServerRequest *request, String filename, size_t index, uint8_t *data, size_t len, bool final) {
   uint32_t free_space = (ESP.getFreeSketchSpace() - 0x1000) & 0xFFFFF000;
   if (!index) {
@@ -438,7 +414,6 @@ static void handle_update_progress_cb(AsyncWebServerRequest *request, String fil
         Update.printError(Serial);
       }
     }
-
     if (filename.endsWith(".spiffs.bin")) {
       Serial.println("update to spiffs");
       Update.runAsync(true);
@@ -446,7 +421,6 @@ static void handle_update_progress_cb(AsyncWebServerRequest *request, String fil
         Update.printError(Serial);
       }
     }
-
   }
 
   if (Update.write(data, len) != len) {
@@ -462,6 +436,7 @@ static void handle_update_progress_cb(AsyncWebServerRequest *request, String fil
     }
   }
 }
+
 void set_wifi() {
 WiFi.hostname(name.c_str());
   if (access_point.equals("access_point")) {
@@ -470,29 +445,24 @@ WiFi.hostname(name.c_str());
     Serial.println("Configuration Point d'acces");
     Serial.print("nom du point d'acces : ");
     Serial.println(name);    
-    WiFi.mode(WIFI_AP);
-    
+    WiFi.mode(WIFI_AP);    
     WiFi.softAP(name.c_str(), "", canal.toInt());
   } else {
     Serial.print("Connexion au reseau : ");
     Serial.println(ssid);   
     WiFi.mode(WIFI_STA);
-
     int timeout = 0;
     WiFi.begin(ssid.c_str(), mdp.c_str());
-
     Serial.println("connection en cours...");
     while (WiFi.status() != WL_CONNECTED) {
       delay(500);
       timeout++;
       Serial.print(".");
-
       if (timeout > 50) {
         Serial.println("TimeOUT");
         access_point = "access_point";
         set_wifi();
         return;
-
       }
     }
     Serial.println("");
@@ -500,33 +470,16 @@ WiFi.hostname(name.c_str());
     Serial.println("IP address: ");
     Serial.println(WiFi.localIP());
   }
-
-
-
-
-
-
   ArduinoOTA.setHostname(name.c_str());
   ArduinoOTA.begin();
   MDNS.addService("http", "tcp", 80);
   MDNS.begin(name.c_str());
-
-
-
-
-
-
-
-
 }
-void loop() {
 
+void loop() {
   ArduinoOTA.handle();
   if (restartNow) {
     Serial.println("Restart");
     ESP.reset();
   }
 }
-
-
-
