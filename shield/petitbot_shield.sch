@@ -1,0 +1,262 @@
+EESchema Schematic File Version 4
+LIBS:power
+LIBS:74xx
+LIBS:Power_Management
+LIBS:pspice
+LIBS:petitbot_shield-cache
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L DIP-BLACK-MALE-HEADER-R_A_3P-2.54-90D_ J3
+U 1 1 5ABB91E2
+P 6000 2950
+F 0 "J3" H 5700 3200 45  0000 L BNN
+F 1 "DIP-BLACK-MALE-HEADER-R_A_3P-2.54-90D_" H 5950 3200 45  0000 L BNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x03_P2.54mm_Vertical" H 6000 2950 60  0001 C CNN
+F 3 "" H 6000 2950 60  0001 C CNN
+F 4 "320020061" H 6030 3100 20  0001 C CNN "SKU"
+	1    6000 2950
+	1    0    0    -1  
+$EndComp
+$Comp
+L DIP-BLACK-MALE-HEADER-R_A_3P-2.54-90D_ J4
+U 1 1 5ABB928F
+P 6000 3550
+F 0 "J4" H 5700 3800 45  0000 L BNN
+F 1 "DIP-BLACK-MALE-HEADER-R_A_3P-2.54-90D_" H 5950 3800 45  0000 L BNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x03_P2.54mm_Vertical" H 6000 3550 60  0001 C CNN
+F 3 "" H 6000 3550 60  0001 C CNN
+F 4 "320020061" H 6030 3700 20  0001 C CNN "SKU"
+	1    6000 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L DIP-BLACK-MALE-HEADER-R_A_3P-2.54-90D_ J5
+U 1 1 5ABB92CE
+P 6000 4150
+F 0 "J5" H 5700 4400 45  0000 L BNN
+F 1 "DIP-BLACK-MALE-HEADER-R_A_3P-2.54-90D_" H 5950 4400 45  0000 L BNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x03_P2.54mm_Vertical" H 6000 4150 60  0001 C CNN
+F 3 "" H 6000 4150 60  0001 C CNN
+F 4 "320020061" H 6030 4300 20  0001 C CNN "SKU"
+	1    6000 4150
+	1    0    0    -1  
+$EndComp
+$Comp
+L DIP-BLACK-MALE-HEADER-R_A_3P-2.54-90D_ J6
+U 1 1 5ABB931A
+P 6000 4750
+F 0 "J6" H 5700 5000 45  0000 L BNN
+F 1 "DIP-BLACK-MALE-HEADER-R_A_3P-2.54-90D_" H 5950 5000 45  0000 L BNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x03_P2.54mm_Vertical" H 6000 4750 60  0001 C CNN
+F 3 "" H 6000 4750 60  0001 C CNN
+F 4 "320020061" H 6030 4900 20  0001 C CNN "SKU"
+	1    6000 4750
+	1    0    0    -1  
+$EndComp
+$Comp
+L DIP-BLACK-MALE-HEADER-R_A_3P-2.54-90D_ J2
+U 1 1 5ABB9361
+P 3500 5350
+F 0 "J2" H 3200 5600 45  0000 L BNN
+F 1 "DIP-BLACK-MALE-HEADER-R_A_3P-2.54-90D_" H 3450 5600 45  0000 L BNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x03_P2.54mm_Vertical" H 3500 5350 60  0001 C CNN
+F 3 "" H 3500 5350 60  0001 C CNN
+F 4 "320020061" H 3530 5500 20  0001 C CNN "SKU"
+	1    3500 5350
+	1    0    0    -1  
+$EndComp
+$Comp
+L DIP-BLACK-FEMALE-HEADER-VERT_4P-2.54_ J8
+U 1 1 5ABB94F6
+P 6000 6000
+F 0 "J8" H 5700 6250 45  0000 L BNN
+F 1 "DIP-BLACK-FEMALE-HEADER-VERT_4P-2.54_" H 5950 6250 45  0000 L BNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical" H 6000 6000 60  0001 C CNN
+F 3 "" H 6000 6000 60  0001 C CNN
+F 4 "F185-1104A1BSYA1" H 6030 6150 20  0001 C CNN "MPN"
+F 5 "320030017" H 6030 6150 20  0001 C CNN "SKU"
+	1    6000 6000
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR01
+U 1 1 5ABB9644
+P 5450 2750
+F 0 "#PWR01" H 5450 2500 50  0001 C CNN
+F 1 "GND" H 5450 2600 50  0000 C CNN
+F 2 "" H 5450 2750 50  0001 C CNN
+F 3 "" H 5450 2750 50  0001 C CNN
+	1    5450 2750
+	-1   0    0    1   
+$EndComp
+$Comp
+L VCC #PWR02
+U 1 1 5ABB96C1
+P 5550 2550
+F 0 "#PWR02" H 5550 2400 50  0001 C CNN
+F 1 "VCC" H 5550 2700 50  0000 C CNN
+F 2 "" H 5550 2550 50  0001 C CNN
+F 3 "" H 5550 2550 50  0001 C CNN
+	1    5550 2550
+	1    0    0    -1  
+$EndComp
+Text GLabel 5300 2800 0    60   Output ~ 0
+GND
+Text GLabel 5300 2950 0    60   Output ~ 0
+VCC
+Text GLabel 5700 3400 0    60   Output ~ 0
+GND
+Text GLabel 5700 3550 0    60   Output ~ 0
+VCC
+Text GLabel 5700 4150 0    60   Output ~ 0
+VCC
+Text GLabel 5700 4750 0    60   Output ~ 0
+VCC
+Text GLabel 3200 5350 0    60   Output ~ 0
+VCC
+Text GLabel 5700 4000 0    60   Output ~ 0
+GND
+Text GLabel 5700 4600 0    60   Output ~ 0
+GND
+Text GLabel 3200 5200 0    60   Output ~ 0
+GND
+Text GLabel 2525 1825 1    60   Input ~ 0
+VCC
+Text GLabel 2625 3650 3    60   Input ~ 0
+GND
+Wire Wire Line
+	5700 2800 5650 2800
+Wire Wire Line
+	5700 2950 5550 2950
+Wire Wire Line
+	5450 2800 5450 2750
+Connection ~ 5450 2800
+Wire Wire Line
+	5550 2550 5550 2950
+Connection ~ 5550 2950
+Wire Wire Line
+	5700 3100 5650 3100
+Wire Wire Line
+	5650 3100 5650 2800
+Connection ~ 5650 2800
+Text GLabel 5700 3700 0    60   Input ~ 0
+SERVOG
+Text GLabel 5700 4300 0    60   Input ~ 0
+SERVOD
+Text GLabel 3125 2450 2    60   Input ~ 0
+SERVOG
+Text GLabel 3125 2550 2    60   Input ~ 0
+SERVOD
+$Comp
+L DIP-BLACK-MALE-HEADER-R_A_3P-2.54-90D_ J7
+U 1 1 5ABB9F78
+P 6000 5350
+F 0 "J7" H 5700 5600 45  0000 L BNN
+F 1 "DIP-BLACK-MALE-HEADER-R_A_3P-2.54-90D_" H 5950 5600 45  0000 L BNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x03_P2.54mm_Vertical" H 6000 5350 60  0001 C CNN
+F 3 "" H 6000 5350 60  0001 C CNN
+F 4 "320020061" H 6030 5500 20  0001 C CNN "SKU"
+	1    6000 5350
+	1    0    0    -1  
+$EndComp
+Text GLabel 5700 5350 0    60   Output ~ 0
+VCC
+Text GLabel 5700 5200 0    60   Output ~ 0
+GND
+Text GLabel 5700 4900 0    60   Input ~ 0
+SERVO1
+Text GLabel 5700 5500 0    60   Input ~ 0
+SERVO2
+Text GLabel 3125 3150 2    60   Input ~ 0
+SERVO1
+Text GLabel 3125 2950 2    60   Input ~ 0
+SERVO3
+Text GLabel 3125 3050 2    60   Input ~ 0
+SERVO2
+Text GLabel 5700 5850 0    60   Input ~ 0
+GND
+Text GLabel 5700 6150 0    60   Input ~ 0
+VCC
+Text GLabel 5700 5950 0    60   Input ~ 0
+ECHO
+Text GLabel 5700 6050 0    60   Input ~ 0
+TRIG
+Text GLabel 3125 2850 2    60   Input ~ 0
+TRIG
+Text GLabel 3125 2350 2    60   Input ~ 0
+ECHO
+$Comp
+L GROVE-CONNECTOR-DIP-90D_4P-2.0_ J1
+U 1 1 5ABBA390
+P 3450 4350
+F 0 "J1" H 3200 4600 45  0000 L BNN
+F 1 "GROVE-CONNECTOR-DIP-90D_4P-2.0_" H 3450 4600 45  0000 L BNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical" H 3450 4350 60  0001 C CNN
+F 3 "" H 3450 4350 60  0001 C CNN
+F 4 "320110034" H 3480 4500 20  0001 C CNN "SKU"
+	1    3450 4350
+	1    0    0    -1  
+$EndComp
+Text GLabel 3300 4200 0    60   Input ~ 0
+GND
+Text GLabel 3300 4400 0    60   Input ~ 0
+GND
+Text GLabel 3300 4300 0    60   Input ~ 0
+LED1
+Text GLabel 3300 4500 0    60   Input ~ 0
+LED2
+Text GLabel 3125 2650 2    60   Input ~ 0
+LED1
+Text GLabel 3125 2750 2    60   Input ~ 0
+LED2
+Wire Wire Line
+	5450 2800 5300 2800
+Wire Wire Line
+	5550 2950 5300 2950
+Wire Wire Line
+	5650 2800 5450 2800
+$Comp
+L MCU_Module:WeMos_D1_mini U1
+U 1 1 5DD71D43
+P 2625 2750
+F 0 "U1" H 2625 1861 50  0000 C CNN
+F 1 "WeMos_D1_mini" H 2625 1770 50  0000 C CNN
+F 2 "Module:WEMOS_D1_mini_light2" H 2625 1600 50  0001 C CNN
+F 3 "https://wiki.wemos.cc/products:d1:d1_mini#documentation" H 775 1600 50  0001 C CNN
+	1    2625 2750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3025 3150 3125 3150
+Wire Wire Line
+	3025 3050 3125 3050
+Wire Wire Line
+	3025 2950 3125 2950
+Wire Wire Line
+	3025 2850 3125 2850
+Wire Wire Line
+	3025 2750 3125 2750
+Wire Wire Line
+	3025 2650 3125 2650
+Wire Wire Line
+	3025 2550 3125 2550
+Wire Wire Line
+	3025 2450 3125 2450
+Wire Wire Line
+	3025 2350 3125 2350
+Text GLabel 3200 5500 0    60   Input ~ 0
+SERVO3
+$EndSCHEMATC
